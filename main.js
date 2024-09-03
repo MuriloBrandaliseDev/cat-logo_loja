@@ -1,24 +1,32 @@
-const carouselTrack = document.querySelector('.carousel-track');
+const track = document.querySelector('.carousel-track');
+const items = document.querySelectorAll('.carousel-item');
+const prevButton = document.querySelector('.carousel-button.prev');
+const nextButton = document.querySelector('.carousel-button.next');
 
-let startX;
-let scrollLeft;
+let currentIndex = 0;
 
-carouselTrack.addEventListener('mousedown', (e) => {
-  startX = e.pageX - carouselTrack.offsetLeft;
-  scrollLeft = carouselTrack.scrollLeft;
+function updateCarousel() {
+  const width = items[currentIndex].offsetWidth;
+  track.style.transform = `translateX(-${width * currentIndex}px)`;
+}
+
+nextButton.addEventListener('click', () => {
+  if (currentIndex < items.length - 1) {
+    currentIndex++;
+  } else {
+    currentIndex = 0; // Volta ao primeiro item
+  }
+  updateCarousel();
 });
 
-carouselTrack.addEventListener('mousemove', (e) => {
-  if (!startX) return;
-  const x = e.pageX - carouselTrack.offsetLeft;
-  const walk = (x - startX) * 2; // Velocidade de deslizamento
-  carouselTrack.scrollLeft = scrollLeft - walk;
+prevButton.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+  } else {
+    currentIndex = items.length - 1; // Vai para o último item
+  }
+  updateCarousel();
 });
 
-carouselTrack.addEventListener('mouseup', () => {
-  startX = null;
-});
-
-carouselTrack.addEventListener('mouseleave', () => {
-  startX = null;
-});
+// Inicializar o carrossel
+updateCarousel();
