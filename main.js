@@ -1,32 +1,40 @@
-const track = document.querySelector('.carousel-track');
-const items = document.querySelectorAll('.carousel-item');
-const prevButton = document.querySelector('.carousel-button.prev');
-const nextButton = document.querySelector('.carousel-button.next');
+const products = document.querySelectorAll('.product-item');
+const totalPages = Math.ceil(products.length / 9);
+let currentPage = 1;
 
-let currentIndex = 0;
+function showPage(page) {
+  products.forEach((product, index) => {
+    product.style.display = (index >= (page - 1) * 9 && index < page * 9) ? 'block' : 'none';
+  });
 
-function updateCarousel() {
-  const width = items[currentIndex].offsetWidth;
-  track.style.transform = `translateX(-${width * currentIndex}px)`;
+  document.querySelector('.page-number').textContent = page;
 }
 
-nextButton.addEventListener('click', () => {
-  if (currentIndex < items.length - 1) {
-    currentIndex++;
-  } else {
-    currentIndex = 0; // Volta ao primeiro item
+document.querySelector('.next-page').addEventListener('click', () => {
+  if (currentPage < totalPages) {
+    currentPage++;
+    showPage(currentPage);
   }
-  updateCarousel();
 });
 
-prevButton.addEventListener('click', () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-  } else {
-    currentIndex = items.length - 1; // Vai para o último item
+document.querySelector('.prev-page').addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    showPage(currentPage);
   }
-  updateCarousel();
 });
 
-// Inicializar o carrossel
-updateCarousel();
+// Inicializar a primeira página
+showPage(currentPage);
+
+
+
+document.querySelector('.next-page').addEventListener('click', () => {
+  document.querySelector('.titulo-produtos').scrollIntoView({ behavior: 'smooth' });
+  // Adicionar lógica para trocar de página (se aplicável)
+});
+
+document.querySelector('.prev-page').addEventListener('click', () => {
+  document.querySelector('.titulo-produtos').scrollIntoView({ behavior: 'smooth' });
+  // Adicionar lógica para trocar de página (se aplicável)
+});
