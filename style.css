@@ -194,6 +194,9 @@ body {
     padding: 10px;
     cursor: pointer;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .prev {
@@ -204,3 +207,9 @@ body {
     right: 10px;
   }
   
+  @media (max-width: 768px) {
+    .carousel-button {
+      padding: 5px;
+      font-size: 14px;
+    }
+  }
