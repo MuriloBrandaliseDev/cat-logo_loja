@@ -4,7 +4,7 @@ body {
     max-width: 100%;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to left top, rgb(209, 78, 100), pink);
+    
 }
 
 .Bem-vinda {
@@ -87,59 +87,15 @@ body {
     }
 }
 
+
+html {
+    scroll-behavior: smooth;
+  }
+
+  
 /*---------------------------------------FIM*/
 
 
-/* Categoria */
-
-.categorias {
-    padding: 50px 20px;
-    text-align: center;
-
-
-}
-
-.categorias h2 {
-
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    font-family: serif;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-}
-
-.botoes-categorias {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn-categoria {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: pink;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 1.2em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.btn-categoria:hover {
-    background-color: rgb(237, 66, 94);
-}
-
-@media (max-width: 768px) {
-    .botoes-categorias {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
-
-
-/*-------------------------------------FIM*/
 
 
 
@@ -148,10 +104,77 @@ body {
 /* Caroulsel */
 
 
+.product-carousel {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .product-carousel img {
+    width: 100%;
+    display: none;
+    transition: opacity 0.5s ease;
+  }
+  
+  .product-carousel img.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+    background-color: pink;
+  }
+  
+  .next {
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .prev {
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+
+  .product-carousel{
+    position: relative;
+    width: 100%;
+    height: 300px; /* Define uma altura fixa */
+    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse o contêiner */
+  }
+  
+  .product-carousel img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Garante que a imagem preencha o contêiner mantendo a proporção */
+  }
+
+
+
+
+
 .titulo-produtos {
     text-align: center;
-    margin-top: 5%;
-    
+    margin-top: -50px;
 }
 
 .titulo-produtos h1 {
@@ -167,55 +190,68 @@ body {
 }
 
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
     margin: 10%;
-}
-
-.product-info h3 {
-    color: rgb(0, 0, 0);
-    border: solid 2px pink;
-    border-radius: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.product-info p {
-    font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(96, 96, 96);
+    gap: 20px; /* Espaçamento entre os produtos */
+    justify-content: center; /* Centraliza os itens na tela */
 }
 
 .product-item {
     text-align: center;
-    padding: 10px;
-    background-color: white;
+    padding: 15px;
+    background-color: #fff;
     border: solid 2px palevioletred;
-    border-radius: 8px;
+    border-radius: 12px;
     width: 100%;
     max-width: 300px;
     height: auto;
     margin: 0 auto; /* Centraliza os produtos em telas menores */
+    box-shadow: 0 4px 8px rgba(197, 130, 130, 0.705); /* Adiciona uma sombra suave */
+    
+}
+
+.product-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.226); /* Aumenta a sombra ao passar o mouse */
 }
 
 .product-item img {
-    width: 90%;
+    border-radius: 8px; /* Arredonda as bordas da imagem */
+    max-width: 100%;
     height: auto;
+    
+}
+
+
+.product-info h3 {
+    font-size: 1.2em;
+    color: palevioletred;
+    margin: 10px 0;
+}
+
+.product-info p {
+    font-size: 1em;
+    color: #333;
 }
 
 .sizes button {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: pink;
+    background-color: palevioletred;
     color: white;
     font-weight: bold;
     border: none;
-    border: solid 1px palevioletred;
+    width: 35px;
+    height: 35px;
+    padding: 5px 10px;
     margin: 5px;
-    padding: 10px;
-    width: 40px;
-    height: 40px;
     border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+.sizes button:hover {
+    background-color: #d45d79; /* Escurece a cor ao passar o mouse */
+}
+
 
 .pagination {
     display: flex;
@@ -280,4 +316,15 @@ body {
     .pagination button {
         padding: 5px 10px;
     }
+}
+
+
+
+
+.footer img{
+    
+    width: 100%;
+    height: 300px;
+
+    
 }

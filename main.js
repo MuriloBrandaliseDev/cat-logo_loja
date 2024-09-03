@@ -38,3 +38,22 @@ document.querySelector('.prev-page').addEventListener('click', () => {
   document.querySelector('.titulo-produtos').scrollIntoView({ behavior: 'smooth' });
   // Adicionar lógica para trocar de página (se aplicável)
 });
+
+
+
+
+
+
+function changeSlide(button, n) {
+  let carousel = button.parentElement;
+  let slides = carousel.querySelectorAll("img");
+  let activeSlide = carousel.querySelector("img.active");
+  let currentIndex = Array.prototype.indexOf.call(slides, activeSlide);
+  let newIndex = currentIndex + n;
+
+  if (newIndex >= slides.length) { newIndex = 0; }
+  if (newIndex < 0) { newIndex = slides.length - 1; }
+
+  activeSlide.classList.remove("active");
+  slides[newIndex].classList.add("active");
+}
