@@ -44,6 +44,93 @@ html {
 
 
 
+/*BOTÕES*/
+.botões{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.configuração {
+    background-color: pink;
+    width: 165px;
+    height: 50px;
+    border-radius: 20px;
+    border: solid 2px palevioletred;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.configuração2{
+    background-color: pink;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    border: solid 2px palevioletred;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.configuração a{
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.configuração2 a{
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.voltar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botão{
+    background-color: pink;
+    width: 250px;
+    height: 50px;
+    border-radius: 20px;
+    border: solid 2px palevioletred;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.botão a{
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+   
+}
+
+/*-------------------------------FIM*/
+
+
+
 
 
 
