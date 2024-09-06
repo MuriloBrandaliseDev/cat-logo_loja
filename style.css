@@ -9,28 +9,78 @@ body {
 }
 
 
-.titulo-produtos {
+/* Estilo do cabeçalho */
+.titulo-produtos1 {
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
+    background-color: pink;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .titulo1 h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px; /* Espaçamento entre título e botões */
+    color: palevioletred;
+  }
+  
+  /* Estilo da seção de botões */
+  .botoes1 {
+    text-align: center;
+    margin-top: 10px; /* Espaçamento entre o título e os botões */
+  }
+  
+  .botoes1 .configuracao1, .botoes1 .configuracao2 {
+    display: inline-block;
+    margin: 5px; /* Espaçamento entre os botões */
+  }
+  
+  .botoes1 a {
+    text-decoration: none;
+    background-color: #ffffff;
+    color: pink;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border:solid 2px palevioletred;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  
+
+
+
+
+.titulo-produtos {
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 20px; /* Adiciona espaçamento ao redor */
+    background-color: pink; /* Cor de fundo para destaque */
+    border-bottom: 2px solid #ddd; /* Linha inferior para parecer um cabeçalho */
 }
 
 .tituloh1 h1 {
-    
-    font-family: serif;
-    width: 600px;
-    font-size: 40px;
-    border-radius: 20px;
-    border: solid 4px pink;
-    background-color: palevioletred;
-    height: 100px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
+    font-size: 3.5rem; /* Tamanho do título */
+    margin-bottom: 20px; /* Espaçamento entre título e botão */
+    color: palevioletred; /* Cor do texto */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.Voltar .botao a {
+    text-decoration: none; /* Remove o sublinhado do link */
+    background-color: rgb(255, 255, 255); /* Cor do botão */
+    color: pink; /* Cor do texto */
+    border: solid 2px palevioletred;
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 20px; /* Bordas arredondadas */
+    font-size: 1rem; /* Tamanho do texto do botão */
+    transition: background-color 0.3s ease; /* Efeito de transição */
+}
+
 
 
 
@@ -97,35 +147,6 @@ html {
 }
 
 
-.voltar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.botão{
-    background-color: pink;
-    width: 250px;
-    height: 50px;
-    border-radius: 20px;
-    border: solid 2px palevioletred;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.botão a{
-    text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color:white;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-
-   
-}
 
 /*-------------------------------FIM*/
 
